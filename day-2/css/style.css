@@ -1,0 +1,66 @@
+    /* my first css*/
+    /* changing the font of the web page from default by the browser*/
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        /*setting backgroun color*/
+        background-color: #aaaacc;
+    }
+        /* Ploting a box aroun the image*/
+    img {
+        border: 5px dotted purple;
+    }
+        /* Framing around the main heading*/
+    h1 {
+        border: 5px solid #ffff00;
+    }
+    h2, h3 {
+        color: #10E6C0;
+    }
+    /* Changing the fond style and font size of the blockquote*/
+    blockquote {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        font-style: italic;
+        text-align: center;
+    }
+    #myid {
+        color:red;
+    }
+
+    /* chaging the font size of the citeation*/
+    cite {
+        font-size: 1rem;
+    }
+    /*using a class by starting a dot*/
+    .bigbold {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    /* pseudo-class always starts with a colon and then link*/
+    ul a:link {
+        font-weight: bold;
+        text-decoration: none;
+        color: brown;
+        font-size: 2rem;
+    }
+
+    a:visited {
+        color: blue;
+        font-weight: bold;
+    }
+    a:hover {
+        color: black;
+        text-decoration: underline;
+        background-color: white;
+    }
+
+    a.harvard:link {
+        color: maroon;
+    }
+
+
+
+
+
+
