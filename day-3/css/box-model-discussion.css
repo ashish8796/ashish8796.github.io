@@ -1,0 +1,30 @@
+div {
+    border: 5px blue solid;
+    margin-top: 2rem;
+    background-color: lightblue;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+  }
+  .box1 {
+    border-color: orange;
+    background-color: yellow;
+    width: 950px;
+  }
+  .box2 {
+    border: 2px green solid;
+    margin-top: 0;
+    width: 60rem;
+  }
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  a, strong, em {
+    border: 2px black solid;
+  }
+  
+  .box3 {
+    background-image: url(http://placekitten.com/200/300);
+    height: 175px;
+  }
