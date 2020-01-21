@@ -1,0 +1,21 @@
+.floatleft {
+    float: left;
+    /* TRouBLe*/
+    margin: 0 1rem 1rem 0;
+  }
+  .floatright {
+    float: right;
+  }
+  /* making the whole article in the center of the page */
+  article {
+    border: 3px solid red;
+    width: 50rem;
+    margin: 0 auto;
+  }
+  
+  article:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  
