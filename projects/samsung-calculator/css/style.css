@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    
+    width: 23%;
+    height: 510px;
+    background-color: black;
+}
+.screen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;  
+    height: 150px;
+    color: white;
+    position: relative;
+}
+.backButton {
+    border: 1px solid green;
+    margin-right: 1rem;
+    background-color: black;
+    color: green;
+}
+.screen::after {
+    content: '';
+    position: absolute;
+    width: 94%;
+    left: 3%;
+    bottom: -20px;
+    border-bottom: 1px solid #3D3D3D;
+}
+.keypad {
+    height: 62%;
+    margin-top: 2rem;
+}
+.buttons {
+    justify-content: space-around;
+    height: 20%;
+    display: flex;
+    padding: 2px;
+}
+input {
+    width: 100%;
+    border: none;
+    align-items: flex-start;
+    border-radius: 27px;
+    margin: 1px 5px;
+    background-color: #262626;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+}
+.top {
+    color: #238C2A;
+}
+.equal {
+    background-color: #238C2A;
+    color: black;
+}
