@@ -1,3 +1,4 @@
+ 
 /* Border box declaration 
 https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
@@ -23,19 +24,14 @@ html {
       margin: 0 auto;
       float: none;
       background-color: #fff;
-      border: 3px solid black;
   }
-  div {
-      
-  }
+  
   div img {
       width: 100%;
       max-width: 250px; 
   }
   /* grid system */
-    img {
-      float: left;
-  }
+  
   .row::after {
       content:"";
       display: table;
