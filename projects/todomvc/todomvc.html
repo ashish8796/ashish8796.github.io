@@ -9,23 +9,9 @@
 </head>
 <body>
     <div class="wraper">
-        <!-- <div class="row-1">
-            <h1>Backbone.js</h1>
-
-            <p>Example <br>
-            <span>Demo</span>, <span>Source</span></p>
-
-            <p>Enyo & Backbone.js <br>
-            <span>Demo</span>, <span>Source</span></p>
-
-            <p>TypeScript & Backbone.js <br>
-            <span>Demo</span>, <span>Source</span></p>
-
-            <hr>    <span>Source</span></p>
-
-            <p>Require.js & Backbone.js <br>
-           
-        </div> -->
+        <header>
+            <h1>todos</h1>
+        </header>
         <div class="container">
             <div class="todo">
                 <input type="text" id="name" placeholder="what needs to be done?" >
@@ -35,10 +21,12 @@
                     <div class="ckbox">
                         <input type="checkbox" id="toggle" class="real-checkbox" >
                         <div class="circle"></div>
-                        <!-- <img src="img/tick.svg" class="tick"> -->
+                        <img src="img/tick.svg" class="tick">
                     </div> 
-                    <div class="show">show me</div>
                     <p>todo</p>
+                    <div class="Button">
+                        <button>X</button>
+                    </div>
                 </div>
                 <div class="items">
                     <div class="ckbox">
@@ -47,6 +35,9 @@
                         <img src="img/tick.svg" class="tick" >
                     </div> 
                     <p>todo</p>
+                    <div class="Button">
+                        <button>X</button>
+                    </div>
                 </div>
                 <div class="items">
                     <div class="ckbox">
@@ -55,6 +46,22 @@
                         <img src="img/tick.svg" class="tick" >
                     </div> 
                     <p>todo</p>
+                    <div class="Button">
+                        <button>X</button>
+                    </div>
+                </div>
+            </div>
+            <div class="trailer">
+                <div>
+                    <p>3 itmes left</p>
+                </div>
+                <div>
+                    <button>All</button>
+                    <button>Active</button>
+                    <button class="Complete">Complete</button>
+                </div>
+                <div>
+                    <button class="clear">Clear completed</button>
                 </div>
             </div>
         </div>

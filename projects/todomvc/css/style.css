@@ -1,27 +1,20 @@
 html {
     box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
     box-sizing: inherit;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font: 300 14px / 1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: rgb(245, 245, 245);
 }
-/* .row-1 {
-    flex: 0 0 20%;
-} */
-/* .row-2 {
-    flex: 0 0 80%;
-} */
-/* span {
-    color: red;
-} */
-/* hr {
-    color: white;
-    border: 1px dashed gray;
-} */
+
 .container {
     font-size: 2rem;
     box-shadow: 2px 5px 12px 1px #bdb8b8;
@@ -29,25 +22,46 @@ body {
     width: 50%;
     margin: 0 auto;
 }
+
 .todo {
     border-bottom: 2px solid lightgray;
-    margin: 10px 0 10px 0;
+    margin: 0;
 }
 .items {
     border-bottom: .5px solid lightgray;
     display: flex;
     align-items: center;
+    background-color: white;
+    
     /* margin-left: 2rem;   */
 }
 
 .items p {
-    margin: 0
+    margin-left: 20px;
 }
 
 .ckbox {
     position: relative;
     padding: 0 8px;
 }
+
+.real-checkbox {
+    position: absolute;
+    height: 25px;
+    opacity: 0;
+    width: 25px;
+}
+
+input {
+    background-color: white;
+    width: 100%;
+    border-style: none;
+    font-size: 2rem;
+    padding: .5em;
+
+}
+
+
 .tick {
     position: absolute;
     width: 20px;
@@ -57,53 +71,9 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* .circle {
-    position: absolute;
-} */
-
-.real-checkbox {
-    position: absolute;
-    height: 25px;
-    /* opacity: 0; */
-    width: 25px;
-}
-
-input {
-    border-style: none;
-    font-size: 2rem;
-    padding: .5em;
-}
-
-/* .real-checkbox:checked, .tick {
-    display: inline-block;
-}
-
-.real-checkbox:not(:checked), .tick {
-    display: none;
-} */
-
-.show {
-    display: none;
-}
-
-#toggle:checked ~ .show {
-    display: block !important;
-}
-
-/* .real-checkbox input[type="checkbox"]:checked .show {
-    display: inline-block;
-}
-
-.real-checkbox input[type="checkbox"]:not(:checked) .show {
-    display: none;
-} */
-
-/* .tick {
-    display: none;
-} */
-
 ::placeholder {
     font-style: italic;
+    color: #d9d9d9;
 }
 
 .circle {
@@ -113,8 +83,64 @@ input {
     border-radius: 50%;
 }
 
+.Button {
+    width: 100%;
+    display: none;
+    justify-content: flex-end;
+    align-items: center
+    
+}
 
+button {
+    color: red;
+    border-style: none;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+}
 
+.items:hover .Button {
+    display: flex;
+}
+
+header {
+    text-align: center;
+    font-size: 3rem; 
+    color: rgba(175, 47, 47, 0.15);
+}
+
+.trailer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.trailer p {
+    font-size: 1rem;
+    color: gray;
+}
+
+.trailer button {
+    color: gray;
+    border-style:  none;
+    
+}
+
+.Complete {
+    border: 1px solid lightblue;
+}
+
+.trailer button:hover {
+    cursor: pointer;
+}
+.clear:hover {
+    text-decoration: underline;
+    
+}
+button:focus {
+    outline:none;
+}
 
 
 
