@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
+:root {
+  --h5: rgb(205, 204, 205);
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #98999c;
+  --a: #e2e2e2;
+  --symbol: #c1c1c1;
+
+  --primary-font: "Roboto", sans-serif;
+
+  --light: 300;
+  --dark: 500;
+  --super-dark: 900;
+}
