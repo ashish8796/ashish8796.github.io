@@ -59,10 +59,21 @@ div {
 }
 
 
+@media (min-width:750px) and (max-width:950px){
 
+.wrapper {
+  transform: rotate(180deg);
+  background-color: green;
+}
 
+}
 
-
+@media (max-width: 749px) {
+  .wrapper {
+    display: block;
+    background-color: orange;
+  }
+}
 
 
 
