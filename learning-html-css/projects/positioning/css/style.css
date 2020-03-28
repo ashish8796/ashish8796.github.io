@@ -1,0 +1,54 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.wraper {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    /* border: 1em solid yellow; */
+    /* position: relative; */
+}
+
+.fixed-text {
+    margin: 0;
+    width: 50%;
+    height: 100vh;
+    text-align: justify;
+    /* border-right: 10px solid green; */
+    position: fixed;
+    background-color: lightblue;
+}
+
+.scrolling-text {
+    margin: 0;
+    width: 50%;
+    height: 100vh;
+    text-align: justify;
+    /* border-left: 10px solid green; */
+    position: absolute;
+    overflow: scroll;
+    overflow-x: hidden;
+    left: 50%;
+    background-color: lightgreen
+}
+
+p {
+    margin: 0 5px;
+}
+
+

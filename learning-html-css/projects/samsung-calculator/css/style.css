@@ -47,6 +47,7 @@ body {
     height: 20%;
     display: flex;
     padding: 2px;
+    border:none;
 }
 input {
     width: 100%;
@@ -54,7 +55,7 @@ input {
     align-items: flex-start;
     border-radius: 27px;
     margin: 1px 5px;
-    background-color: #262626;
+    ba  ckground-color: #262626;
     color: white;
     font-size: x-large;
     text-align: center;

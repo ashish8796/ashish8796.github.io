@@ -8,6 +8,10 @@ html {
   box-sizing: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: var(--primary-font);
