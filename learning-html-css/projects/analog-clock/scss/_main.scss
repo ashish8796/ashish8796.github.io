@@ -1,0 +1,131 @@
+body {
+  font-family: "Orbitron", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  background: #967aa7;
+  background-image: url(./../img.jpg);
+  background-blend-mode: overlay;
+  border-radius: 10px;
+  flex-direction: column;
+
+  .border {
+    width: 375px;
+    height: 375px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(255, 174, 0), rgb(132, 0, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 3px gray;
+  }
+
+  .frame {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    // border: 25px solid red;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    box-shadow: 0px -3px 4px 2px #9e9797a3;
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #93488c;
+  }
+
+  .inner-circle {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    background: #e6dada7a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sec-hand {
+    width: 60px;
+    height: 3px;
+    position: absolute;
+  }
+  .actual-sec-hand {
+    background: #93488c;
+    width: 160px;
+    height: 2.5px;
+  }
+
+  .min-hand {
+    width: 10px;
+    height: 3px;
+    position: absolute;
+  }
+
+  .actual-min-hand {
+    width: 116px;
+    height: 5px;
+    background: #efac39;
+  }
+
+  .hr-hand {
+    width: 10px;
+    height: 3px;
+  }
+
+  .actual-hr-hand {
+    width: 87px;
+    height: 5px;
+    background: #efac39;
+  }
+}
+
+.hour-number {
+  color: #93488c;
+  margin: 26px 0 0 0;
+  font-size: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.digital-clock {
+  margin: 20px;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgb(255, 102, 0),
+    rgba(21, 5, 114, 0.856)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  h1 {
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: bolder;
+  }
+}
