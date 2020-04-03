@@ -152,7 +152,7 @@ body {
 }
 
 .digital-clock {
-  margin: 20px;
+  margin-top: 40px;
   text-align: center;
   background: linear-gradient(to right, #ff6600, rgba(21, 5, 114, 0.856));
   -webkit-background-clip: text;
@@ -160,7 +160,7 @@ body {
 }
 .digital-clock h1 {
   font-size: 30px;
-  line-height: 35px;
+  line-height: 50px;
   font-weight: bold;
 }
 .digital-clock h2 {
