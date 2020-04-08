@@ -5,7 +5,8 @@ const makeDivs = (row, column) => {
 
   while (divNo < (row * column)) {
     let grid = document.createElement('div');
-    grid.classList.add('grid');
+    grid.classList.add('pixel');
+    grid.classList.add(`${divNo}`);
     fragment.appendChild(grid);
     divNo += 1;
   }
@@ -16,8 +17,8 @@ function generateGrid(rows, columns) {
   makeDivs(rows, columns);
 
   //Inseting fragment document
+  gridArea.innerHTML = '';
   gridArea.appendChild(fragment);
-  console.log(gridArea)
 
   const styles = `
   grid-template-columns: repeat(${columns}, 20px);
@@ -37,9 +38,7 @@ formElem.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const gridHeight = gridRows.value;
-  console.log(`gridHeight: ${gridHeight}`);
   const gridWidth = gridColumns.value;
-  console.log(`gridWidth: ${gridWidth}`);
 
   generateGrid(gridHeight, gridWidth);
 })
@@ -48,7 +47,6 @@ formElem.addEventListener('submit', (event) => {
 
 function makeColorDivs(arr) {
   for (i of arr) {
-    console.log(i);
     let color = document.createElement('div');
     color.classList.add(i);
     colorFragment.appendChild(color);
@@ -64,3 +62,44 @@ const colorArr = ['wuzzy', 'mahogany', 'brick-red', 'scarlet', 'sunset', 'pink',
 
 //Setting up a color pallet
 makeColorDivs(colorArr);
+let currentColor = document.querySelector('.clr');
+
+colorParent.addEventListener('click', (event) => {
+  let clickedItem = event.target;
+  currentColor.className = `clr ${clickedItem.classList.value}`
+})
+
+let mouseDown = false;
+
+document.addEventListener('mousedown', (event) => {
+  mouseDown = true;
+});
+
+document.addEventListener('mouseup', (event) => {
+  mouseDown = false;
+});
+
+gridArea.addEventListener('mouseover', (event) => {
+  if(mouseDown) {
+    if(event.target.classList.contains('pixel')) {
+      event.target.className = `pixel ${currentColor.classList[1]}`;
+    }
+  } 
+})
+
+//setting up editable tools for editing the art
+
+const eraser = document.querySelector('#eraser');
+const pencil = document.querySelector('#pencil');
+const eyeDropper = document.querySelector('#eye-dropper');
+const trash = document.querySelector('#trash');
+const paintBrush= document.querySelector('#paint-brush');
+const square = document.querySelector('#square');
+
+const colorTools = document.querySelector('.color-tool');
+let clickedTool = null;
+
+colorTools.addEventListener('click', (event) => {
+  clickedTool = event.target;
+
+})
