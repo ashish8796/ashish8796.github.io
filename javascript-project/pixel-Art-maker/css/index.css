@@ -1,0 +1,203 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Righteous&display=swap&subset=latin-ext");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-image: url("./../back-image.png");
+}
+
+header {
+  font-family: "Righteous", cursive;
+  font-size: 80px;
+  text-align: center;
+  background: -webkit-linear-gradient(#c40736, #1995bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 20px auto;
+}
+
+.wrapper {
+  width: 97%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.art-tools {
+  border-top: 2px solid #757272c4;
+  border-left: 2px solid #757272c4;
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 5px 0px #565353;
+}
+.art-tools h1 {
+  font-size: 25px;
+  margin: 10px 0;
+}
+.art-tools label {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.art-tools input {
+  width: 100px;
+  text-align: center;
+  margin: 10px 0 20px 5px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid;
+}
+.art-tools input:focus {
+  outline: none;
+}
+.art-tools span {
+  font-size: 16px;
+}
+.art-tools .grid-dimen {
+  width: 80%;
+  border-radius: 5px;
+  margin: 20px 0;
+  box-shadow: 2px 2px 5px 0px #565353;
+}
+.art-tools .grid-dimen .submit {
+  height: 35px;
+  width: 130px;
+  background: #2ea69a;
+  border: none;
+  box-shadow: 8px 8px 4px 2px #6c925f;
+  color: white;
+}
+.art-tools .grid-dimen .submit:hover {
+  background: #00bcd4;
+  box-shadow: 2.5px 2.5px #69885ef0;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.art-tools .color-pallet {
+  box-shadow: 2px 2px 5px 0px #565353;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.art-tools .color-pallet .colors {
+  margin: 10px 0 20px 0;
+  width: 190px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  box-shadow: 2px 2px 5px 3px #565353;
+}
+.art-tools .color-pallet .colors div {
+  background-color: #fff;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+.art-tools .color-tool {
+  box-shadow: 2px 2px 5px 0px #565353;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.art-tools .color-tool div {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+.art-tools .current-tools {
+  width: 80%;
+  box-shadow: 2px 2px 5px 0px #565353;
+  margin: 20px auto;
+}
+.art-tools .current-tools .clr {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background: #fff;
+}
+.art-tools .current-tools .icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background: #fff;
+}
+
+.art-feild {
+  width: 70%;
+}
+.art-feild .draw-canvas {
+  border-top: 2px solid #757272c4;
+  border-left: 2px solid #757272c4;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 90%;
+  height: 90px;
+  text-align: center;
+  box-shadow: 2px 2px 5px 0px #565353;
+}
+.art-feild .draw-canvas h1 {
+  font-size: 30px;
+  padding: 10px 0;
+}
+
+/*# sourceMappingURL=index.css.map */
