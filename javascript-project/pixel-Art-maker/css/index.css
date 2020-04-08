@@ -122,9 +122,9 @@ header {
   background: #2ea69a;
   border: none;
   box-shadow: 8px 8px 4px 2px #6c925f;
-  color: white;
 }
 .art-tools .grid-dimen .submit:hover {
+  color: white;
   cursor: pointer;
   background: #00bcd4;
   box-shadow: 2.5px 2.5px #69885ef0;
@@ -148,7 +148,6 @@ header {
   box-shadow: 2px 2px 5px 3px #565353;
 }
 .art-tools .color-pallet .colors div {
-  background-color: #fff;
   border: 1px solid black;
   width: 30px;
   height: 30px;
@@ -202,6 +201,18 @@ header {
   font-size: 30px;
   padding: 10px 0;
 }
+.art-feild .grid-area {
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+  display: grid;
+}
+.art-feild .grid-area .grid {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid #80807f;
+}
 
 footer .download-canvas h1 {
   font-size: 30px;
@@ -214,7 +225,7 @@ footer .download-canvas button {
   width: 130px;
   background: #2ea69a;
   border: none;
-  box-shadow: 8px 8px 4px 2px #6c925f;
+  box-shadow: 8px 8px 4px 2px #ad923c;
 }
 footer .download-canvas button:focus {
   outline: none;
@@ -252,6 +263,155 @@ footer .contact i:hover {
 }
 footer p {
   margin: 30px;
+}
+
+/* Color Pallet Color */
+.red {
+  background-color: #EE204D;
+}
+
+.pink {
+  background-color: #F780A1;
+}
+
+.orange {
+  background-color: #FF7538;
+}
+
+.yellow {
+  background-color: #FDFC74;
+}
+
+.neon-carrot {
+  background-color: #FFA343;
+}
+
+.sun-glow {
+  background-color: #FFCF48;
+}
+
+.sunset {
+  background-color: #FD5E53;
+}
+
+.peach {
+  background-color: #FFCFAB;
+}
+
+.canary {
+  background-color: #FFFF99;
+}
+
+.sea-green {
+  background-color: #9Fe2bf;
+}
+
+.fern {
+  background-color: #71BC78;
+}
+
+.caribbean {
+  background-color: #1cd3a2;
+}
+
+.tropical-green {
+  background-color: #17806D;
+}
+
+.eletric-lime {
+  background-color: #1DF914;
+}
+
+.screamin-green {
+  background-color: #76FF7A;
+}
+
+.green {
+  background-color: #1CAC78;
+}
+
+.blue {
+  background-color: #1F75FE;
+}
+
+.pacific-blue {
+  background-color: #1CA9C9;
+}
+
+.midnight-blue {
+  background-color: #1A4876;
+}
+
+.indigo {
+  background-color: #5D76CB;
+}
+
+.purple {
+  background-color: #7851A9;
+}
+
+.plum {
+  background-color: #8E4584;
+}
+
+.shadow {
+  background-color: #8A795D;
+}
+
+.sepia {
+  background-color: #A5694F;
+}
+
+.brass {
+  background-color: #CD9575;
+}
+
+.gold {
+  background-color: #E7C697;
+}
+
+.apricot {
+  background-color: #FDD9B5;
+}
+
+.white {
+  background-color: #EDEDED;
+}
+
+.black {
+  background-color: #232323;
+}
+
+.outer-space {
+  background-color: #414A4C;
+}
+
+.grey {
+  background-color: #95918C;
+}
+
+.manatee {
+  background-color: #979AAA;
+}
+
+.wild-blue {
+  background-color: #A2ADD0;
+}
+
+.scarlet {
+  background-color: #FC2847;
+}
+
+.mahogany {
+  background-color: #CD4A4A;
+}
+
+.brick-red {
+  background-color: #CB4154;
+}
+
+.wuzzy {
+  background-color: #CC6666;
 }
 
 /*# sourceMappingURL=index.css.map */
