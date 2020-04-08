@@ -2,12 +2,12 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   background-image: url("./../back-image.png");
+  text-align: center;
 }
 
 header {
   font-family: "Righteous", cursive;
   font-size: 80px;
-  text-align: center;
   background: -webkit-linear-gradient(rgb(196, 7, 54), rgb(25, 149, 187));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -26,7 +26,6 @@ header {
   border-left: 2px solid #757272c4;
   border-radius: 5px;
   width: 30%;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,6 +72,7 @@ header {
       color: white;
 
       &:hover {
+        cursor: pointer;
         background: #00bcd4;
         box-shadow: 2.5px 2.5px #69885ef0;
         transition: box-shadow 0.3s ease-in-out;
@@ -81,6 +81,7 @@ header {
   }
 
   .color-pallet {
+    border-radius: 5px;
     box-shadow: 2px 2px 5px 0px #565353;
     width: 80%;
     display: flex;
@@ -105,6 +106,7 @@ header {
   }
 
   .color-tool {
+    border-radius: 5px;
     box-shadow: 2px 2px 5px 0px #565353;
     width: 80%;
     display: grid;
@@ -119,6 +121,7 @@ header {
   }
 
   .current-tools {
+    border-radius: 5px;
     width: 80%;
     box-shadow: 2px 2px 5px 0px #565353;
     margin: 20px auto;
@@ -156,5 +159,67 @@ header {
       font-size: 30px;
       padding: 10px 0;
     }
+  }
+}
+
+footer {
+  .download-canvas {
+    h1 {
+      font-size: 30px;
+      margin: 10px 0;
+    }
+
+    button {
+      margin-bottom: 20px;
+      font-size: 20px;
+      height: 35px;
+      width: 130px;
+      background: #2ea69a;
+      border: none;
+      box-shadow: 8px 8px 4px 2px #6c925f;
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: #fff;
+        background: #00bcd4;
+        box-shadow: 2.5px 2.5px #69885ef0;
+        transition: box-shadow 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .contact {
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0px #565353;
+    width: 80%;
+    padding: 15px 0;
+    margin: 0 auto ;
+    h1 {
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+
+    nav *{
+      margin: 0 5px;
+      display: inline-block;
+    }
+
+    li {
+      font-size: 30px;
+    }
+    i {
+      color: black;
+
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+
+  p {
+    margin: 30px;
   }
 }
