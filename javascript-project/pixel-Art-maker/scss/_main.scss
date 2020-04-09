@@ -3,6 +3,41 @@ body {
   font-family: "Roboto", sans-serif;
   background-image: url("./../back-image.png");
   text-align: center;
+  position: relative;
+}
+
+.alert {
+  // display: flex;
+  background-color: #00bcd4;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px 6px #c4ef80;;
+  color: #192965;
+  border: 1px solid black;
+  width: 320px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: left;
+  margin: 20px  0 0 20px;
+  position: absolute;
+  display: none;
+  justify-content: space-between;
+
+  button {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: 20px;
+    border: none;
+    background-color: orangered;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
 
 header {
@@ -11,7 +46,8 @@ header {
   background: -webkit-linear-gradient(rgb(196, 7, 54), rgb(25, 149, 187));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 20px auto;
+  margin: 20px auto; 
+
 }
 
 .wrapper {
@@ -25,7 +61,7 @@ header {
   border-top: 2px solid #757272c4;
   border-left: 2px solid #757272c4;
   border-radius: 5px;
-  width: 30%;
+  flex-basis: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,7 +147,6 @@ header {
     width: 80%;
 
     .tools {
-      font-size: 30px;
       margin: 20px;
       display: grid;
       grid-template-columns: repeat(3, 40px);
@@ -120,15 +155,16 @@ header {
       justify-content: center;
 
       div {
+        font-size: 30px;
         border: 1px solid black;
         &:hover {
           cursor: pointer;
-          background-color:black;
+          background-color: black;
           color: #fff;
         }
-        
+
         i {
-          margin-top: 3px ;
+          padding: 5px;
         }
       }
     }
@@ -152,16 +188,20 @@ header {
       flex-direction: row;
       margin: 20px 0 2em 20px;
       align-items: center;
-
-      .icon {
-        margin-top: 0;
-        margin-left: 28px;
-        width: 40px;
-        height: 40px;
-        border: 1px solid black;
-        background: #fff;
-      }
     }
+  }
+}
+
+.icon {
+  font-size: 30px;
+  margin-top: 0;
+  margin-left: 28px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+
+  i {
+    margin-top:  5px;
   }
 }
 
@@ -201,8 +241,8 @@ header {
 }
 
 .pixel {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background: rgb(241, 234, 234);
   border: 1px solid rgba(128, 128, 127, 1);
 }
@@ -268,6 +308,11 @@ footer {
     margin: 30px;
   }
 }
+
+// Color Tools
+// .eraser {
+//   background: rgb(241, 234, 234);
+// }
 
 /* Color Pallet Color */
 .red {

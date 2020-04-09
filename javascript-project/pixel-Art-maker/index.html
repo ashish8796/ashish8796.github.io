@@ -9,10 +9,18 @@
       src="https://kit.fontawesome.com/60217b89b5.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
     <link href="./css/index.css" rel="stylesheet" />
   </head>
   <body>
-    <header>Pixel Art Maker</header>
+    <div class="animated zoomIn faster alert">
+      <p>Grid can not be greater than 80 X 80. <span class="add-text"></span></p>
+      
+      <button id="alert">x</button>
+    </div>
+    <header>
+      Pixel Art Maker
+    </header>
     <div class="wrapper">
       <!-- Section of art tools -->
 
@@ -47,12 +55,16 @@
         <div class="color-tool">
           <h1>Select Tool</h1>
           <div class="tools">
-            <div id="eraser"><i class="fas fa-eraser"></i></div>
-            <div id="pencil"><i class="fas fa-pencil-alt"></i></div>
-            <div class="eye-dropper"><i class="fas fa-eye-dropper"></i></div>
-            <div class="trash"><i class="fas fa-trash"></i></div>
-            <div class="paint-brush"><i class="fas fa-paint-brush"></i></div>
-            <div class="square"><i class="fas fa-square"></i></div>
+            <div class="eraser"><i class="fas fa-eraser eraser"></i></div>
+            <div class="pencil"><i class="fas fa-pencil-alt pencil"></i></div>
+            <div class="eye-dropper">
+              <i class="fas fa-eye-dropper eye-dropper"></i>
+            </div>
+            <div class="paint-brush">
+              <i class="fas fa-paint-brush paint-brush"></i>
+            </div>
+            <div class="square"><i class="fas fa-square square"></i></div>
+            <div class="trash"><i class="fas fa-trash trash"></i></div>
           </div>
         </div>
 
@@ -65,7 +77,7 @@
           </div>
           <div class="tool-div">
             <p>Current tool:</p>
-            <div class="icon"></div>
+            <div class="icon"><i class="fas fa-pencil-alt pencil"></i></div>
           </div>
         </div>
       </section>
@@ -75,7 +87,7 @@
       <section class="art-feild">
         <div class="draw-canvas">
           <h1>Design Canvas</h1>
-          <p>The grid size should be 30 X 30.</p>
+          <p>The grid size should be 80 X 80.</p>
         </div>
 
         <!-- Inserting grid for making art -->
