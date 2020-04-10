@@ -1,0 +1,187 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Coda', cursive;
+  text-align: center;
+  background-image: url('./../annie-spratt-6a3nqQ1YwBw-unsplash.jpg');
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffffa6;
+  height: 100vh;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  color: #00bcd4;
+
+  img {
+    width: 7%;
+  }
+  
+  h1 {
+    // background: rgba(43, 80, 74, 0.5);
+    border-radius: 10px; 
+    color: hsla(0, 0%, 0%, .9);
+    font: normal 100px Varela Round, sans-serif;
+    height: 120px;
+    animation: move linear 2000ms infinite;  
+  }
+  
+  @keyframes move {
+    0% {
+      text-shadow:
+        4px -4px 0 rgb(215, 228, 30), 
+        3px -3px 0 rgb(215, 228, 30),
+        2px -2px 0 rgb(215, 228, 30),
+        1px -1px 0 rgb(215, 228, 30),
+        -4px 4px 0 hsla(180, 100%, 50%, 1), 
+        -3px 3px 0 hsla(180, 100%, 50%, 1), 
+        -2px 2px 0 hsla(180, 100%, 50%, 1), 
+        -1px 1px 0 hsla(180, 100%, 50%, 1)
+      ;
+    }
+    25% {    
+      text-shadow:      
+        -4px -4px 0 hsla(180, 100%, 50%, 1), 
+        -3px -3px 0 hsla(180, 100%, 50%, 1), 
+        -2px -2px 0 hsla(180, 100%, 50%, 1), 
+        -1px -1px 0 hsla(180, 100%, 50%, 1),
+        4px 4px 0 hsla(0, 100%, 50%, 1), 
+        3px 3px 0 hsla(0, 100%, 50%, 1), 
+        2px 2px 0 hsla(0, 100%, 50%, 1), 
+        1px 1px 0 hsla(0, 100%, 50%, 1)      
+      ;
+    }
+    50% {
+      text-shadow:
+        -4px 4px 0 hsla(0, 100%, 50%, 1), 
+        -3px 3px 0 hsla(0, 100%, 50%, 1), 
+        -2px 2px 0 hsla(0, 100%, 50%, 1), 
+        -1px 1px 0 hsla(0, 100%, 50%, 1),
+        4px -4px 0 hsla(180, 100%, 50%, 1), 
+        3px -3px 0 hsla(180, 100%, 50%, 1), 
+        2px -2px 0 hsla(180, 100%, 50%, 1), 
+        1px -1px 0 hsla(180, 100%, 50%, 1)
+      ;
+    }
+    75% {
+      text-shadow:
+        4px 4px 0 hsla(180, 100%, 50%, 1), 
+        3px 3px 0 hsla(180, 100%, 50%, 1), 
+        2px 2px 0 hsla(180, 100%, 50%, 1), 
+        1px 1px 0 hsla(180, 100%, 50%, 1),
+        -4px -4px 0 hsla(0, 100%, 50%, 1), 
+        -3px -3px 0 hsla(0, 100%, 50%, 1), 
+        -2px -2px 0 hsla(0, 100%, 50%, 1), 
+        -1px -1px 0 hsla(0, 100%, 50%, 1)      
+      ;
+    }
+    100% {
+      text-shadow:
+        4px -4px 0 hsla(0, 100%, 50%, 1), 
+        3px -3px 0 hsla(0, 100%, 50%, 1), 
+        2px -2px 0 hsla(0, 100%, 50%, 1), 
+        1px -1px 0 hsla(0, 100%, 50%, 1),
+        -4px 4px 0 hsla(180, 100%, 50%, 1), 
+        -3px 3px 0 hsla(180, 100%, 50%, 1), 
+        -2px 2px 0 hsla(180, 100%, 50%, 1), 
+        -1px 1px 0 hsla(180, 100%, 50%, 1)
+      ;
+    }  
+  }
+}
+
+.leader-board {
+  margin: 20px auto;
+  background:  rgba(58, 133, 116, 0.4);
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px;
+  border: 2px solid #000839;
+  border-radius: 10px;
+}
+
+.game-details {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  padding-bottom: 20px;
+
+}
+
+.restart {
+  font-size: 25px;
+  border: none;
+  background: none;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.option {
+  width: 450px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #82ffffc9;
+  border: 3px solid #08729ae6;
+  border-radius: 10px;
+  animation: ease-in-out;
+}
+
+.level {
+  display: flex;
+  margin: 20px 0 -10px 0;
+  justify-content: space-between;
+
+  button {
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid black;
+
+    &:foucs {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  #easy {
+    background-color: #79f11e;
+  }
+
+  #medium {
+    background-color: #f5f500;
+  }
+
+  #hard {
+    background-color: #ec0f0f;
+  }
+}
+
+.game-platform {
+  display: none;
+  width: 60%;
+  height: 50%;
+  border: 2px solid rgb(58, 54, 54);
+  border-radius: 10px;
+  box-shadow: 1px 1px 7px 5px #4a4c4c;
+}
+
+footer {
+  margin: 20px;
+  font-size: 20px;
+}
+
