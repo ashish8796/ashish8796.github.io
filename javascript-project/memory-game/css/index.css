@@ -3097,16 +3097,19 @@ body {
   box-sizing: border-box;
   font-family: "Coda", cursive;
   text-align: center;
-  background-image: url("./../annie-spratt-6a3nqQ1YwBw-unsplash.jpg");
-  height: 100vh;
+  background-color: #ffffffa6;
+  background: #ffffffa6 url("./../annie-spratt-6a3nqQ1YwBw-unsplash.jpg");
+  min-height: 100vh;
+  position: relative;
 }
 
 .container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #ffffffa6;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .title {
@@ -3116,6 +3119,9 @@ body {
 }
 .title img {
   width: 7%;
+}
+.title #first-img {
+  transform: scaleX(-1);
 }
 .title h1 {
   border-radius: 10px;
@@ -3179,7 +3185,8 @@ body {
   background-color: #82ffffc9;
   border: 3px solid #08729ae6;
   border-radius: 10px;
-  animation: ease-in-out;
+  box-shadow: 4px 4px 6px 2px #4c4e4ebf;
+  color: #651b55;
 }
 
 .level {
@@ -3192,6 +3199,7 @@ body {
   border-radius: 5px;
   padding: 10px;
   border: 2px solid black;
+  color: #651b55;
 }
 .level button:foucs {
   outline: none;
@@ -3201,26 +3209,58 @@ body {
 }
 .level #easy {
   background-color: #79f11e;
+  color: #002c6f;
 }
 .level #medium {
   background-color: #f5f500;
+  color: #710000;
 }
 .level #hard {
   background-color: #ec0f0f;
+  color: #43fafb;
 }
 
 .game-platform {
   display: none;
-  width: 60%;
-  height: 50%;
+  width: 600px;
+  height: 500px;
   border: 2px solid #3a3636;
   border-radius: 10px;
   box-shadow: 1px 1px 7px 5px #4a4c4c;
 }
+.game-platform .icon {
+  color: #fff;
+  font-size: 70px;
+  background-color: #1f646b;
+  margin: 20px;
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 7px 5px #4a4c4c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-platform .icon p {
+  margin: auto 0;
+  visibility: hidden;
+}
+.game-platform .visible {
+  background-color: #00ffff;
+}
+.game-platform .visible p {
+  margin: auto 0;
+  visibility: visible;
+}
 
 footer {
-  margin: 20px;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
   font-size: 20px;
+  position: fixed;
+  bottom: 0;
+  background: #47494a;
 }
 
 /*# sourceMappingURL=index.css.map */
