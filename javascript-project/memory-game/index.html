@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Game</title>
     <link href="./css/index.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/60217b89b5.js" crossorigin="anonymous"></script> 
+    <script
+      src="https://kit.fontawesome.com/60217b89b5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -41,12 +44,31 @@
         </div>
       </div>
 
+      <!-- Game completing dash board -->
+      <div class="game-completed">
+        <p>
+          CONGRATS!! You got <span class="rating">3</span>/3 rating and
+          completed in <span class="seconds">22</span> seconds with
+          <span class="moveCount">9</span> moves.<br>
+          Do you want to play it again?
+        </p>
+        <div class="play-again">
+          <div class="yes-no">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+          </div>
+          <div class="progress">
+            <button class="save-progress">Save Your Progress</button>
+          </div>
+        </div>
+      </div>
+
       <!-- Game paltform -->
       <div class="game-platform"></div>
     </div>
 
     <!-- footer for other details -->
-    <footer>Ashish Kumar Saini © All Right Reserved 2020</footer>
+    <footer>Ashish Kumar Saini © All Right Reserved 2030</footer>
 
     <!-- Javascript file -->
     <script src="./index.js"></script>

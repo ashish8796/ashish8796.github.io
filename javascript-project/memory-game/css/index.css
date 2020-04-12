@@ -3100,7 +3100,6 @@ body {
   background-color: #ffffffa6;
   background: #ffffffa6 url("./../annie-spratt-6a3nqQ1YwBw-unsplash.jpg");
   min-height: 100vh;
-  position: relative;
 }
 
 .container {
@@ -3110,6 +3109,7 @@ body {
   align-items: center;
   background-color: #ffffffa6;
   min-height: 100vh;
+  position: relative;
 }
 
 .title {
@@ -3257,6 +3257,75 @@ body {
 .game-platform .visible i {
   margin: auto 0;
   visibility: visible;
+}
+
+.game-completed {
+  display: none;
+  border: 3px solid #153d54;
+  width: 430px;
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  background-color: #0a3640a6;
+  border-radius: 10px;
+  z-index: 10;
+}
+.game-completed p {
+  font-size: 18px;
+  padding: 20px;
+  line-height: 25px;
+}
+
+.play-again {
+  display: flex;
+  flex-direction: column;
+}
+.play-again .yes-no {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.play-again .yes-no button {
+  padding: 5px 15px;
+  border-radius: 6px;
+  border: none;
+  border: 2px solid #153518;
+  color: #fff;
+}
+.play-again .yes-no button:focus {
+  outline: none;
+}
+.play-again .yes {
+  font-size: 20px;
+  background-color: #1bec1b;
+}
+.play-again .yes:hover {
+  cursor: pointer;
+}
+.play-again .no {
+  font-size: 20px;
+  background-color: red;
+}
+.play-again .no:hover {
+  cursor: pointer;
+}
+.play-again .progress {
+  background-color: #00a8cc;
+  margin: 20px;
+  border: 2px solid #034a30;
+  border-radius: 5px;
+}
+.play-again .save-progress {
+  font-size: 20px;
+  border: none;
+  background: none;
+  color: #031327;
+}
+.play-again .save-progress:focus {
+  outline: none;
+}
+.play-again .save-progress:hover {
+  cursor: pointer;
 }
 
 footer {

@@ -1,8 +1,8 @@
 //Game details variables
 const moveCount = document.querySelector('.moves');
 const timeCount = document.querySelector('.time');
-const emElem = document.querySelector('em');
 const restartGame = document.querySelector('.restart');
+const stars = document.querySelector('em');
 
 //Leader board variables
 const leaderBoard = document.querySelector('.leader-board');
@@ -10,12 +10,18 @@ const leaderBoard = document.querySelector('.leader-board');
 //Game dificulty variables
 const option = document.querySelector('.option');
 const levels = document.querySelector('.level');
-const easyLevel = document.querySelector('#easy');
-const mediumLevel = document.querySelector('#medium');
-const hardLevel = document.querySelector('#hard');
 
 //Game plateform variables 
 const gamePlateform = document.querySelector('.game-platform');
+
+//Play again vaibales
+const gameFinished = document.querySelector('.game-completed');
+const rating = document.querySelector('.rating');
+const timeConsumed = document.querySelector('.seconds');
+const totalMoves = document.querySelector('.moveCount');
+const yesBtn = document.querySelector('.yes');
+const noBtn = document.querySelector('.no');
+const saveProgress = document.querySelector('.save-progress');
 
 //Document fragment variable
 const gridFragment = new DocumentFragment();
@@ -71,6 +77,7 @@ function makeDivs(rows, columns, levelSymbol) {
     icon.setAttribute('id', `div-${i + 1}`);
     let iElem = document.createElement('i');
     // iElem.className = map.get(orderArr[i])
+    console.log(levelSymbol[i]);
     iElem.className = levelSymbol[i];
     icon.appendChild(iElem);
     gridFragment.append(icon);
@@ -94,54 +101,120 @@ function gridProperty(rows, columns, gridGap) {
   gamePlateform.setAttribute('style', styles)
 }
 
+let twoStar = 0;
+let oneStar = 0;
+let rows = 0;
+let columns = 0;
+let levelFragment = null;
+//Easy level of the game
+function easyLevel() {
+  rows = 3;
+  columns = 4;
+  let gridGap = "70px 45px";
+  twoStar = 20;
+  oneStar = 30;
+
+  option.style.display = 'none'
+  makeDivs(rows, columns, symbolEasy);
+  gridProperty(rows, columns, gridGap);
+}
+
+//Medium level of the game
+function mediumLevel() {
+  rows = 4;
+  columns = 4;
+  let gridGap = '20px 45px';
+  twoStar = 25;
+  oneStar = 35;
+
+  option.style.display = 'none';
+  makeDivs(rows, columns, symbolMedium);
+  gridProperty(rows, columns, gridGap);
+}
+
+//Hard level of the game
+function hardLevel() {
+  rows = 4;
+  columns = 5;
+  let gridGap = '30px 45px';
+  twoStar = 25;
+  oneStar = 30;
+
+  option.style.display = 'none';
+  makeDivs(rows, columns, symbolHard);
+  gridProperty(rows, columns, gridGap);
+}
+
+let levelArr = ['easy', 'medium', 'hard'];
+let levelFunction = [easyLevel, mediumLevel, hardLevel];
+let symbolArr = [symbolEasy, symbolMedium, symbolHard];
+let levelIndex = 0;
+
 //Eventlistener for level buttons
 option.addEventListener('click', (event) => {
-  let clikedBtn = event.target;
-
-  if (clikedBtn.id == 'easy') {
-    let rows = 3;
-    let columns = 4;
-    let gridGap = "70px 45px";
-
-    option.style.display = 'none';
-    appendFragment(makeDivs(rows, columns, symbolEasy));
-    gridProperty(rows, columns, gridGap);
+  let clickedBtn = event.target;
+  let levelId = clickedBtn.id;
+  if (levelId === 'easy') {
+    index = levelArr.indexOf(levelId);
+    levelFunction[index]();
+    appendFragment(gridFragment);
   }
-
-  if (clikedBtn.id == 'medium') {
-    let rows = 4;
-    let columns = 4;
-    let gridGap = '20px 45px';
-
-    option.style.display = 'none';
-    appendFragment(makeDivs(rows, columns, symbolMedium));
-    gridProperty(rows, columns, gridGap);
+  if (levelId == 'medium') {
+    index = levelArr.indexOf(levelId);
+    levelFunction[index]();
+    appendFragment(gridFragment);
   }
-
-  if (clikedBtn.id == 'hard') {
-    let rows = 4;
-    let columns = 5;
-    let gridGap = '30px 45px';
-
-    option.style.display = 'none';
-    appendFragment(makeDivs(rows, columns, symbolHard));
-    gridProperty(rows, columns, gridGap);
+  if (levelId == 'hard') {
+    index = levelArr.indexOf(levelId);
+    levelFunction[index]();
+    appendFragment(gridFragment);
   }
 })
+
 
 let div1 = null;
 let div2 = null;
 let eventArr = [];
 let matchedArr = [];
 let moves = 0;
+let time = 0;
+
 //Function for visible the symbol
 function visibleSymbol(clickedItem) {
   if (clickedDiv.classList.contains('icon')) {
     clickedItem.className = 'icon visible';
-    moves++;
-    console.log(moves);
-    moveCount.innerText = `${moves} Moves`;
-    console.log(moveCount);
+  }
+}
+
+let star = 3;
+//Function for managing stars by movesCount
+function manageStars(moves, twoStar, oneStar) {
+  if (moves > twoStar) {
+    star = 2;
+    stars.innerHTML = "<em>&#9733;&#9733;</em>";
+  }
+  if (moves > oneStar) {
+    star = 1;
+    stars.innerHTML = "<em>&#9733;</em>";
+  }
+}
+
+//Function for time consuming by player
+function updateTimeStar() {
+  time++;
+  timeCount.innerText = `${time} Seconds`;
+}
+
+//Timer
+let timer = null;
+
+//Function for start timer 
+function startTimer() {
+  if (call) {
+    call--;
+    timer = setInterval(() => {
+      updateTimeStar()
+    }, 1000);
   }
 }
 
@@ -159,18 +232,36 @@ function visibleArr(className, divId) {
       eventArr.push({ name: className, id: divId });
     }
   }
-  // moves += eventArr.length;
-  // console.log(moves);
-  // moveCount.innertext = `${moves} Moves`;
+  if (eventArr.length == 2) {
+    moves++;
+    moveCount.innerText = `${moves} Moves`;
+  }
+  manageStars(moves, twoStar, oneStar);
 }
+
 
 //Function for matching the divs
 function matchDivs(arr) {
   if (arr[0].name == arr[1].name) {
+    div1.className = 'animated flash icon visible';
+    div2.className = 'animated flash icon visible';
     matchedArr.push(arr[0].name)
     matchedArr.push(arr[1].name)
+
+    //Stop timer on completing the game;
+    if (matchedArr.length == symbolArr[index].length) {
+      clearInterval(timer);
+      setTimeout(() => {
+        gameFinished.style.display = 'block';
+      } , 1000);
+      
+      totalMoves.innerText = moves;
+      timeConsumed.innerText = time;
+      rating.innerText = star;
+    }
     return
   };
+
 
   if (arr[0].name != arr[1].name) {
     div1.className = 'animated heartBeat icon visible';
@@ -184,32 +275,57 @@ function matchDivs(arr) {
 
 }
 
-let time = 0;
-//Function for time consuming by player
-function timeTaken() {
-  timeCount.innerText = `${time} Seconds`;
-  time++;
-  console.log(time);
-}
 
 let clickedDiv = null;
 let Id = null;
 let className = null;
+let call = 1;
 
 //Eventlistener for the click on the divs
 gamePlateform.addEventListener('click', (event) => {
   clickedDiv = event.target;
   visibleSymbol(clickedDiv);
   if (clickedDiv.classList.contains('icon')) {
-    setInterval(() => {
-      timeTaken()
-    }, 1000);
-    className = clickedDiv.children[0].className;
-    Id = clickedDiv.id;
-    visibleArr(className, Id);
+    startTimer();
   }
+  className = clickedDiv.children[0].className;
+  Id = clickedDiv.id;
+  visibleArr(className, Id);
+
   if (eventArr.length == 2) {
     matchDivs(eventArr);
     eventArr = [];
   }
+})
+
+//Restart the game
+function restart() {
+  levelFunction[index]();
+  gamePlateform.innerHTML = '';
+  gamePlateform.appendChild(gridFragment);
+
+  matchedArr = [];
+  eventArr = [];
+  moves = 0;
+  time = 0;
+  call = 1;
+
+  clearInterval(timer);
+  stars.innerHTML = "<em>&#9733;&#9733;&#9733;</em>";
+  moveCount.innerText = `${moves} Moves`;
+  timeCount.innerText = `${time} Seconds`;
+}
+
+restartGame.addEventListener('click', (event) => {
+  restart();
+})
+
+yesBtn.addEventListener('click', (event) => {
+  restart();
+})
+
+noBtn.addEventListener('click', (event) => {
+  gamePlateform.style.display = 'none';
+  option.style.display = 'block';
+  gameFinished.style.display = 'none';
 })
