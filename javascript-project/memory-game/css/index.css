@@ -3247,14 +3247,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-.game-platform .icon p {
+.game-platform .icon i {
   margin: auto 0;
   visibility: hidden;
 }
 .game-platform .visible {
   background-color: #00ffff;
 }
-.game-platform .visible p {
+.game-platform .visible i {
   margin: auto 0;
   visibility: visible;
 }

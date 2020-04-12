@@ -203,15 +203,15 @@ body{
     color: #fff;
     font-size: 70px;
     background-color: #1f646b;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     box-shadow: 1px 1px 6px 2px #595a5a8c;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    p {
+    i {
       margin: auto 0;
       visibility: hidden;
     }    
@@ -219,7 +219,7 @@ body{
   
   .visible {
     background-color: #00ffff;
-    p {
+    i {
       margin: auto 0;
       visibility: visible;
     }
