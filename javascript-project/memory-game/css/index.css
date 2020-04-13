@@ -3409,7 +3409,7 @@ form button:hover {
   outline: none;
   border: none;
   padding: 3px;
-  margin: 10px;
+  margin: 10px auto;
   color: #021d2b;
   background: none;
 }
@@ -3515,6 +3515,7 @@ form button:hover {
   }
 
   form {
+    flex-direction: column;
     justify-content: center;
     width: 95%;
     position: fixed;

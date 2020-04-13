@@ -338,6 +338,7 @@ restartGame.addEventListener('click', (event) => {
 yesBtn.addEventListener('click', (event) => {
   levelFunction[index]();
   restart();
+  gameFinished.style.display = 'none';
 })
 
 noBtn.addEventListener('click', (event) => {
