@@ -23,6 +23,16 @@ const yesBtn = document.querySelector('.yes');
 const noBtn = document.querySelector('.no');
 const saveProgress = document.querySelector('.save-progress');
 
+//SaveProgress varibles
+const easyScores = document.querySelector('.easy-scores');
+const mediumScores = document.querySelector('.medium-scores');
+const hardScores = document.querySelector('.hard-scores');
+const easyRow = document.querySelector('#easy-row');
+const mediumRow = document.querySelector('#medium-row');
+const hardRow = document.querySelector('#hard-row');
+const saveName = document.querySelector('form');
+const playerName = document.querySelector('#name');
+
 //Document fragment variable
 const gridFragment = new DocumentFragment();
 
@@ -77,7 +87,6 @@ function makeDivs(rows, columns, levelSymbol) {
     icon.setAttribute('id', `div-${i + 1}`);
     let iElem = document.createElement('i');
     // iElem.className = map.get(orderArr[i])
-    console.log(levelSymbol[i]);
     iElem.className = levelSymbol[i];
     icon.appendChild(iElem);
     gridFragment.append(icon);
@@ -106,6 +115,7 @@ let oneStar = 0;
 let rows = 0;
 let columns = 0;
 let levelFragment = null;
+
 //Easy level of the game
 function easyLevel() {
   rows = 3;
@@ -148,7 +158,7 @@ function hardLevel() {
 let levelArr = ['easy', 'medium', 'hard'];
 let levelFunction = [easyLevel, mediumLevel, hardLevel];
 let symbolArr = [symbolEasy, symbolMedium, symbolHard];
-let levelIndex = 0;
+let index = 0;
 
 //Eventlistener for level buttons
 option.addEventListener('click', (event) => {
@@ -253,11 +263,7 @@ function matchDivs(arr) {
       clearInterval(timer);
       setTimeout(() => {
         gameFinished.style.display = 'block';
-      } , 1000);
-      
-      totalMoves.innerText = moves;
-      timeConsumed.innerText = time;
-      rating.innerText = star;
+      }, 1000);
     }
     return
   };
@@ -300,7 +306,7 @@ gamePlateform.addEventListener('click', (event) => {
 
 //Restart the game
 function restart() {
-  levelFunction[index]();
+
   gamePlateform.innerHTML = '';
   gamePlateform.appendChild(gridFragment);
 
@@ -317,10 +323,12 @@ function restart() {
 }
 
 restartGame.addEventListener('click', (event) => {
+  levelFunction[index]();
   restart();
 })
 
 yesBtn.addEventListener('click', (event) => {
+  levelFunction[index]();
   restart();
 })
 
@@ -328,4 +336,25 @@ noBtn.addEventListener('click', (event) => {
   gamePlateform.style.display = 'none';
   option.style.display = 'block';
   gameFinished.style.display = 'none';
+  restart();
 })
+
+//Save Progress
+saveProgress.addEventListener('click', (event) => {
+  if (event.target.classList.contains('save-progress')) {
+    gameFinished.style.display = 'none';
+    saveName.style.display = 'block';
+  }
+})
+
+let name = '';
+//Form for adding name in the array
+saveName.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  name = playerName.value;
+  let user = {name: name, star: star, time: time, moves: moves, index: index};
+  localStorage.setItem('user', JSON.stringify(user));
+  window.location.pathname = '/leader-board.html';
+})
+

@@ -3153,12 +3153,17 @@ body {
   background: rgba(58, 133, 116, 0.4);
   font-size: 25px;
   font-weight: 500;
-  padding: 10px;
+  padding: 12px;
   border: 2px solid #000839;
   border-radius: 10px;
 }
 .leader-board:hover {
   cursor: pointer;
+}
+.leader-board a {
+  text-decoration: none;
+  color: black;
+  padding: 6px 10px;
 }
 
 .game-details {
@@ -3260,7 +3265,6 @@ body {
 }
 
 .game-completed {
-  display: none;
   border: 3px solid #153d54;
   width: 430px;
   position: absolute;
@@ -3336,6 +3340,64 @@ footer {
   position: fixed;
   bottom: 0;
   background: #47494a;
+}
+
+.leader-board-details {
+  margin: 10px auto;
+  background: rgba(58, 133, 116, 0.4);
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px;
+  border: 2px solid #000839;
+  border-radius: 10px;
+}
+
+table {
+  margin: 30px;
+}
+table caption {
+  font-size: 20px;
+  margin: 20px;
+  font-weight: bold;
+}
+table tr {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+table .detail {
+  background-color: #00ffff;
+}
+table th {
+  width: 150px;
+  font-size: 20px;
+  padding: 5px;
+  font-weight: bold;
+}
+table td {
+  width: 150px;
+  font-size: 20px;
+  padding: 2px 5px;
+}
+
+form {
+  display: none;
+}
+
+#name {
+  border: 3px solid #113663cc;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 5px;
+  outline: none;
+  padding: 3px;
+  margin: 10px;
+  background-color: #64f5e7;
+  color: #0a6896;
+}
+#name::placeholder {
+  opacity: 0.7;
+  font-size: 18px;
+  color: black;
 }
 
 /*# sourceMappingURL=index.css.map */
