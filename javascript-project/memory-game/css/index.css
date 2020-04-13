@@ -3265,6 +3265,7 @@ body {
 }
 
 .game-completed {
+  display: none;
   border: 3px solid #153d54;
   width: 430px;
   position: absolute;
@@ -3334,10 +3335,9 @@ body {
 
 footer {
   color: #fff;
-  width: 100%;
   padding: 10px;
   font-size: 20px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   background: #47494a;
 }
@@ -3381,23 +3381,144 @@ table td {
 
 form {
   display: none;
+  align-items: center;
+  height: 100px;
+  border: 3px solid #113663cc;
+  background-color: #64f5e7;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  z-index: 11;
+}
+form button {
+  margin-right: 20px;
+  font-size: 20px;
+  border: 2px solid #b70689;
+  background: #35f521ba;
+  border-radius: 5px;
+  padding: 3px;
+  outline: none;
+}
+form button:hover {
+  cursor: pointer;
 }
 
 #name {
-  border: 3px solid #113663cc;
   text-decoration: none;
-  font-size: 20px;
-  border-radius: 5px;
+  font-size: 30px;
   outline: none;
+  border: none;
   padding: 3px;
   margin: 10px;
-  background-color: #64f5e7;
-  color: #0a6896;
+  color: #021d2b;
+  background: none;
 }
 #name::placeholder {
   opacity: 0.7;
-  font-size: 18px;
+  font-size: 25px;
   color: black;
+}
+
+.play {
+  font-size: 30px;
+}
+.play a {
+  text-decoration: none;
+  color: #c3055c;
+}
+
+@media screen and (max-width: 420px) {
+  .title {
+    color: #00bcd4;
+  }
+  .title img {
+    width: 9%;
+  }
+  .title #first-img {
+    transform: scaleX(-1);
+  }
+  .title h1 {
+    height: 40px;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.9);
+    font: normal 36px Varela Round, sans-serif;
+    animation: move linear 2000ms infinite;
+  }
+
+  .game-details {
+    width: 90%;
+  }
+
+  .option {
+    width: 80%;
+    font-size: 18px;
+  }
+
+  .level button {
+    font-size: 18px;
+    padding: 6px;
+  }
+
+  .game-platform {
+    padding: 10px;
+    margin: 20px 50px;
+  }
+  .game-platform .icon {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .game-completed {
+    width: 95%;
+    top: 40%;
+  }
+  .game-completed p {
+    font-size: 14px;
+    padding: 10px;
+    line-height: 16px;
+  }
+
+  .play-again .yes-no button {
+    padding: 3px 15px;
+    border-radius: 5px;
+  }
+  .play-again .yes {
+    font-size: 18px;
+  }
+  .play-again .no {
+    font-size: 18px;
+  }
+  .play-again .progress {
+    margin: 10px;
+  }
+
+  footer {
+    color: #fff;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  table caption {
+    font-size: 18px;
+  }
+  table th {
+    font-size: 18px;
+  }
+  table td {
+    font-size: 18px;
+  }
+
+  .play {
+    padding: 5px;
+    font-size: 25px;
+  }
+
+  form {
+    justify-content: center;
+    width: 95%;
+    position: fixed;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

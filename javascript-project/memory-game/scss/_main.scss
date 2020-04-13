@@ -24,8 +24,7 @@ body{
   color: #00bcd4;
 
   img {
-    width: 7%;
-    
+    width: 7%;  
   }
   
   #first-img {
@@ -234,7 +233,7 @@ body{
 }
 
 .game-completed {
-  // display: none;
+  display: none;
   border: 3px solid #153d54;
   width: 430px;
   position: absolute;
@@ -312,10 +311,9 @@ body{
 
 footer {
   color: #fff;
-  width: 100%;
   padding: 10px;
   font-size: 20px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   background: #47494a;
 }
@@ -364,22 +362,51 @@ table {
 
 form {
   display: none;
+  align-items: center;
+  height: 100px;
+  border: 3px solid #113663cc;
+  background-color:  #64f5e7;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  z-index: 11;
+
+  button {
+    margin-right: 20px;
+    font-size: 20px;
+    border: 2px solid #b70689;
+    background:#35f521ba;
+    border-radius: 5px;
+    padding: 3px;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 #name {
-  border: 3px solid #113663cc;
   text-decoration: none;
-  font-size: 20px;
-  border-radius: 5px;
+  font-size: 30px;
   outline: none;
+  border: none;
   padding: 3px;
   margin: 10px;
-  background-color:  #64f5e7;
-  color: #0a6896;
+  color: #021d2b;
+  background: none;
 
   &::placeholder {
     opacity: .7;
-    font-size: 18px;
+    font-size: 25px;
     color: black;
+  }
+}
+
+.play {
+  font-size: 30px;
+  a {
+    text-decoration: none;
+    color: #c3055c;
   }
 }

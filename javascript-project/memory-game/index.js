@@ -23,13 +23,7 @@ const yesBtn = document.querySelector('.yes');
 const noBtn = document.querySelector('.no');
 const saveProgress = document.querySelector('.save-progress');
 
-//SaveProgress varibles
-const easyScores = document.querySelector('.easy-scores');
-const mediumScores = document.querySelector('.medium-scores');
-const hardScores = document.querySelector('.hard-scores');
-const easyRow = document.querySelector('#easy-row');
-const mediumRow = document.querySelector('#medium-row');
-const hardRow = document.querySelector('#hard-row');
+//Save details variables 
 const saveName = document.querySelector('form');
 const playerName = document.querySelector('#name');
 
@@ -115,12 +109,16 @@ let oneStar = 0;
 let rows = 0;
 let columns = 0;
 let levelFragment = null;
+let gridGap = "0";
 
 //Easy level of the game
 function easyLevel() {
   rows = 3;
   columns = 4;
-  let gridGap = "70px 45px";
+  gridGap = "70px 45px";
+  if(window.innerWidth < 420) {
+    gridGap = "20px 15px";
+  }
   twoStar = 20;
   oneStar = 30;
 
@@ -133,7 +131,10 @@ function easyLevel() {
 function mediumLevel() {
   rows = 4;
   columns = 4;
-  let gridGap = '20px 45px';
+  gridGap = '20px 45px';
+  if(window.innerWidth < 420) {
+    gridGap = "15px 15px";
+  }
   twoStar = 25;
   oneStar = 35;
 
@@ -146,7 +147,10 @@ function mediumLevel() {
 function hardLevel() {
   rows = 4;
   columns = 5;
-  let gridGap = '30px 45px';
+  gridGap = '30px 45px';
+  if(window.innerWidth < 420) {
+    gridGap = "15px 10px";
+  }
   twoStar = 25;
   oneStar = 30;
 
@@ -264,6 +268,10 @@ function matchDivs(arr) {
       setTimeout(() => {
         gameFinished.style.display = 'block';
       }, 1000);
+
+      totalMoves.innerText = moves;
+      timeConsumed.innerText = time;
+      rating.innerText = star;
     }
     return
   };
@@ -343,7 +351,7 @@ noBtn.addEventListener('click', (event) => {
 saveProgress.addEventListener('click', (event) => {
   if (event.target.classList.contains('save-progress')) {
     gameFinished.style.display = 'none';
-    saveName.style.display = 'block';
+    saveName.style.display = 'flex';
   }
 })
 
@@ -353,8 +361,7 @@ saveName.addEventListener('submit', (event) => {
   event.preventDefault();
 
   name = playerName.value;
-  let user = {name: name, star: star, time: time, moves: moves, index: index};
+  let user = { name: name, star: star, time: time, moves: moves, index: index };
   localStorage.setItem('user', JSON.stringify(user));
   window.location.pathname = '/leader-board.html';
 })
-
