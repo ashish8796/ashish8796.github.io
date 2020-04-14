@@ -15,6 +15,7 @@ const levels = document.querySelector('.level');
 const gamePlateform = document.querySelector('.game-platform');
 
 //Play again vaibales
+const overlay = document.querySelector('.overlay');
 const gameFinished = document.querySelector('.game-completed');
 const rating = document.querySelector('.rating');
 const timeConsumed = document.querySelector('.seconds');
@@ -116,8 +117,10 @@ function easyLevel() {
   rows = 3;
   columns = 4;
   gridGap = "70px 45px";
-  if(window.innerWidth < 420) {
-    gridGap = "20px 15px";
+  if (window.innerWidth < 420) {
+    rows = 4;
+    columns = 3;
+    gridGap = "30px 50px";
   }
   twoStar = 20;
   oneStar = 30;
@@ -132,8 +135,8 @@ function mediumLevel() {
   rows = 4;
   columns = 4;
   gridGap = '20px 45px';
-  if(window.innerWidth < 420) {
-    gridGap = "15px 15px";
+  if (window.innerWidth < 420) {
+    gridGap = "20px 23px";
   }
   twoStar = 25;
   oneStar = 35;
@@ -148,8 +151,8 @@ function hardLevel() {
   rows = 4;
   columns = 5;
   gridGap = '30px 45px';
-  if(window.innerWidth < 420) {
-    gridGap = "15px 10px";
+  if (window.innerWidth < 420) {
+    gridGap = "23px 10px";
   }
   twoStar = 25;
   oneStar = 30;
@@ -195,10 +198,10 @@ let time = 0;
 
 //Function for visible the symbol
 function visibleSymbol(clickedItem) {
-  if (eventArr.length == 2) {
-    return
-  }
   if (clickedDiv.classList.contains('icon')) {
+    if (eventArr.length == 2) {
+      return
+    }
     clickedItem.className = 'icon visible';
   }
 }
@@ -237,6 +240,9 @@ function startTimer() {
 
 //Function for an array of clicked Item 
 function visibleArr(className, divId) {
+  if (eventArr.length == 2) {
+    return
+  }
   if (eventArr.length == 1) {
     if (eventArr[0].id != divId && (!matchedArr.indexOf(className) + 1)) {
       div2 = document.querySelector(`#${divId}`)
@@ -264,21 +270,19 @@ function matchDivs(arr) {
     div2.className = 'animated flash icon visible';
     matchedArr.push(arr[0].name)
     matchedArr.push(arr[1].name)
-
-    //Stop timer on completing the game;
-    if (matchedArr.length == symbolArr[index].length) {
-      clearInterval(timer);
-      setTimeout(() => {
-        gameFinished.style.display = 'block';
-      }, 1000);
-
-      totalMoves.innerText = moves;
-      timeConsumed.innerText = time;
-      rating.innerText = star;
-    }
-    return
   };
 
+  //Stop timer on completing the game;
+  if (matchedArr.length == symbolArr[index].length) {
+    clearInterval(timer);
+    setTimeout(() => {
+      overlay.style.display = 'flex';
+    }, 1000);
+
+    totalMoves.innerText = moves;
+    timeConsumed.innerText = time;
+    rating.innerText = star;
+  }
 
   if (arr[0].name != arr[1].name) {
     div1.className = 'animated heartBeat icon visible';
@@ -289,7 +293,9 @@ function matchDivs(arr) {
     }
     setTimeout(() => closeDivs(), 800);
   };
-
+  setTimeout(() => {
+    eventArr = [];
+  }, 800);
 }
 
 
@@ -300,19 +306,21 @@ let call = 1;
 
 //Eventlistener for the click on the divs
 gamePlateform.addEventListener('click', (event) => {
-  clickedDiv = event.target;
-  visibleSymbol(clickedDiv);
-  if (clickedDiv.classList.contains('icon')) {
-    startTimer();
-  }
-  className = clickedDiv.children[0].className;
-  Id = clickedDiv.id;
-  visibleArr(className, Id);
+  if (eventArr.length <= 1) {
+    clickedDiv = event.target;
+    visibleSymbol(clickedDiv);
+    if (clickedDiv.classList.contains('icon')) {
+      startTimer();
+    }
+    className = clickedDiv.children[0].className;
+    Id = clickedDiv.id;
 
-  if (eventArr.length == 2) {
-    matchDivs(eventArr);
-    eventArr = [];
+    visibleArr(className, Id);
+    if (eventArr.length == 2) {
+      matchDivs(eventArr);
+    }
   }
+
 })
 
 //Restart the game

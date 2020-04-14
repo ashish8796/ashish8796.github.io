@@ -14,14 +14,17 @@
     <div class="container">
       <!-- Title of the game -->
       <div class="title">
+        <div class="first-img"><img src="./idea.svg" id="first-img" /></div>
         <h1>
-          <img src="./idea.svg" id="first-img" /> Memory Game
-          <img src="./idea.svg" />
+          Memory Game
         </h1>
+        <div id="second-img"><img src="./idea.svg"  /></div>
       </div>
 
       <!-- Leader board details -->
-      <div class="leader-board"><a href="./leader-board.html">Show Leader Board</a></div>
+      <div class="leader-board">
+        <a href="./leader-board.html">Show Leader Board</a>
+      </div>
 
       <!-- Game details -->
       <div class="game-details">
@@ -35,7 +38,7 @@
       </div>
 
       <!-- Game level options -->
-      <div class="animated zoomInUp 3s option">
+      <div class="animated zoomInUp option">
         <p>Come on player!! Choose Your level.</p>
         <div class="level">
           <button id="easy">Easy</button>
@@ -45,26 +48,28 @@
       </div>
 
       <!-- Game completing dash board -->
-      <div class="game-completed">
-        <p>
-          CONGRATS!! You got <span class="rating">3</span>/3 rating and
-          completed in <span class="seconds">22</span> seconds with
-          <span class="moveCount">9</span> moves.<br>
-          Do you want to play it again?
-        </p>
-        <div class="play-again">
-          <div class="yes-no">
-            <button class="yes">Yes</button>
-            <button class="no">No</button>
-          </div>
-          <div class="progress">
-            <button class="save-progress">Save Your Progress</button>
+      <div class="overlay">
+        <div class="game-completed">
+          <p>
+            CONGRATS!! You got <span class="rating">3</span>/3 rating and
+            completed in <span class="seconds">22</span> seconds with
+            <span class="moveCount">9</span> moves.<br />
+            Do you want to play it again?
+          </p>
+          <div class="play-again">
+            <div class="yes-no">
+              <button class="yes">Yes</button>
+              <button class="no">No</button>
+            </div>
+            <div class="progress">
+              <button class="save-progress">Save Your Progress</button>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Enter name div -->
-      <form class="enterName animated flipInY delay-1">
+      <form class="enterName animated flipInY">
         <input
           type="text"
           name="name"
@@ -76,10 +81,10 @@
 
       <!-- Game paltform -->
       <div class="game-platform"></div>
+
       <!-- footer for other details -->
       <footer>Ashish Kumar Saini © All Right Reserved 2030</footer>
     </div>
-
 
     <!-- Javascript file -->
     <script src="./index.js"></script>

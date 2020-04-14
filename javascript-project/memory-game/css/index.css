@@ -3113,20 +3113,32 @@ body {
 }
 
 .title {
+  margin: 0;
+  display: flex;
+  align-items: center;
   font-size: 60px;
   font-weight: 600;
   color: #00bcd4;
 }
+.title .first-img {
+  text-align: start;
+  width: 80px;
+}
+.title #second-img {
+  text-align: end;
+  width: 80px;
+}
 .title img {
-  width: 7%;
+  width: 100%;
 }
 .title #first-img {
   transform: scaleX(-1);
+  text-align: end;
 }
 .title h1 {
   border-radius: 10px;
   color: rgba(0, 0, 0, 0.9);
-  font: normal 100px Varela Round, sans-serif;
+  font: normal 110px Varela Round, sans-serif;
   height: 120px;
   animation: move linear 2000ms infinite;
 }
@@ -3232,8 +3244,8 @@ body {
 }
 
 .game-platform {
-  background: linear-gradient(45deg, #6010a9, #26ddfba1, #f53e61);
   display: none;
+  background: linear-gradient(45deg, #f10793d9, #f10793d9);
   padding: 25px;
   margin-bottom: 50px;
   border: 2px solid #3a3636;
@@ -3264,16 +3276,24 @@ body {
   visibility: visible;
 }
 
-.game-completed {
+.overlay {
   display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.game-completed {
+  top: 40%;
+  left: 30%;
   border: 3px solid #153d54;
   width: 430px;
-  position: absolute;
-  top: 50%;
   color: #fff;
   background-color: #0a3640a6;
   border-radius: 10px;
-  z-index: 10;
 }
 .game-completed p {
   font-size: 18px;
@@ -3315,7 +3335,7 @@ body {
   cursor: pointer;
 }
 .play-again .progress {
-  background-color: #00a8cc;
+  background-color: #0dd1fb;
   margin: 20px;
   border: 2px solid #034a30;
   border-radius: 5px;
@@ -3430,20 +3450,36 @@ form button:hover {
 
 @media screen and (max-width: 420px) {
   .title {
+    display: flex;
+    margin: 20px 0;
     color: #00bcd4;
+    align-items: center;
+  }
+  .title .first-img {
+    text-align: start;
+    width: 80px;
+  }
+  .title #second-img {
+    text-align: end;
+    width: 80px;
   }
   .title img {
-    width: 9%;
+    width: 90%;
   }
   .title #first-img {
     transform: scaleX(-1);
+    text-align: end;
   }
   .title h1 {
-    height: 40px;
+    height: 60px;
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.9);
     font: normal 36px Varela Round, sans-serif;
     animation: move linear 2000ms infinite;
+  }
+
+  .leader-board {
+    margin: 1em auto;
   }
 
   .game-details {
@@ -3466,13 +3502,12 @@ form button:hover {
   }
   .game-platform .icon {
     font-size: 30px;
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
   }
 
   .game-completed {
     width: 95%;
-    top: 40%;
   }
   .game-completed p {
     font-size: 14px;
@@ -3498,6 +3533,10 @@ form button:hover {
     color: #fff;
     padding: 5px;
     font-size: 18px;
+  }
+
+  .leader-board-details {
+    margin: 1em auto;
   }
 
   table caption {

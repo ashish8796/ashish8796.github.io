@@ -1,20 +1,37 @@
 //Media Quries
 @media screen and (max-width: 420px) {
   .title {
+    display: flex;
+    margin: 20px 0;
     color: #00bcd4;
+    align-items: center;
+
+    .first-img {
+      text-align: start;
+      width: 80px;
+    }
+    #second-img {
+      text-align: end;
+      width: 80px;
+    }
     img {
-      width: 9%;
+      width: 90%;
     }
     #first-img {
       transform: scaleX(-1);
+      text-align: end;
     }
     h1 {
-      height: 40px;
+      height: 60px;
       border-radius: 10px;
       color: hsla(0, 0%, 0%, 0.9);
       font: normal 36px Varela Round, sans-serif;
       animation: move linear 2000ms infinite;
     }
+  }
+  
+  .leader-board {
+    margin: 1em  auto;
   }
   .game-details {
     width: 90%;
@@ -31,19 +48,19 @@
     }
   }
 
+  
   .game-platform {
     padding: 10px;
     margin: 20px 50px;
     .icon {
       font-size: 30px;
-      width: 50px;
-      height: 50px;
+      width: 65px;
+      height: 65px;
     }
   }
-
+  
   .game-completed {
     width: 95%;
-    top: 40%;
     p {
       font-size: 14px;
       padding: 10px;
@@ -72,6 +89,10 @@
     color: #fff;
     padding: 5px;
     font-size: 18px;
+  }
+
+  .leader-board-details {
+    margin: 1em auto;
   }
 
   table {
