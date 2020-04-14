@@ -195,6 +195,9 @@ let time = 0;
 
 //Function for visible the symbol
 function visibleSymbol(clickedItem) {
+  if (eventArr.length == 2) {
+    return
+  }
   if (clickedDiv.classList.contains('icon')) {
     clickedItem.className = 'icon visible';
   }

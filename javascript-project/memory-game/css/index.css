@@ -3334,10 +3334,11 @@ body {
 }
 
 footer {
+  width: 100%;
   color: #fff;
   padding: 10px;
   font-size: 20px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background: #47494a;
 }
