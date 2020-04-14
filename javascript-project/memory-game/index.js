@@ -366,7 +366,7 @@ saveProgress.addEventListener('click', (event) => {
     saveName.style.display = 'flex';
   }
 })
-
+const  enterElem = document.querySelector('#submit');
 let name = '';
 //Form for adding name in the array
 saveName.addEventListener('submit', (event) => {
@@ -375,5 +375,10 @@ saveName.addEventListener('submit', (event) => {
   name = playerName.value;
   let user = { name: name, star: star, time: time, moves: moves, index: index };
   localStorage.setItem('user', JSON.stringify(user));
+  enterElem.addEventListener('click', (event)=> {
+    if(event.target.id == 'submit') {
+      window.location.pathname = '/leader-board.html';
+    }
+  })
   window.location.pathname = '/leader-board.html';
 })
